@@ -1,31 +1,23 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * print_diagonal - check the code for Holberton School students.
- *@n: variable
- * Return: void .
+ * print_diagonal - draws a diagonal line on the terminal
+ *
+ * @n: number of characters \ to be printed
  */
 void print_diagonal(int n)
 {
-int count, i;
-count = 0;
-if (n > 0)
-{
-while (count < n)
-{
-count++;
-i = count;
-while (i > 1)
-{
-_putchar(' ');
-i--;
-}
-_putchar('\\');
-_putchar('\n');
-}
-}
-else if (n <= 0)
-{
-_putchar('\n');
-}
+	int x, y;
+
+	if (n <= 0)
+		_putchar('\n');
+
+	for (x = 0; x < n; x++)
+	{
+		for (y = 0; y < x; y++)
+			_putchar(' ');
+
+		_putchar('\\');
+		_putchar('\n');
+	}
 }

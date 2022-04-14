@@ -1,35 +1,29 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * print_triangle - check the code for Holberton School students.
- *@size: variable
- * Return: Always 0.
+ * print_triangle - prints a triangle, using the character #
+ * @n: the size of the triangle
  */
-void print_triangle(int size)
+void print_triangle(int n)
 {
-int count, i;
-count = 0;
-if (size > 0)
-{
-while (count < size)
-{
-i = size;
-while (i > count + 1)
-{
-i--;
-_putchar(' ');
-}
-while (i > 0)
-{
-_putchar('#');
-i--;
-}
-count++;
-_putchar('\n');
-}
-}
-else
-{
-_putchar('\n');
-}
+	int h, index;
+
+	if (n > 0)
+	{
+		for (h = 1; h <= n; h++)
+		{
+			for (index = n - h; index > 0; index--)
+				_putchar(' ');
+
+			for (index = 0; index < h; index++)
+				_putchar('#');
+
+			if (h == n)
+				continue;
+
+			_putchar('\n');
+		}
+	}
+
+	_putchar('\n');
 }

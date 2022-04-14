@@ -1,20 +1,17 @@
-#include "holberton.h"
-#include <stdio.h>
+#include "main.h"
 
 /**
- * _isdigit - check the code for Holberton School students.
- *@c : variable
- * Return: 0 or 1 .
+ * _isdigit - check if a character is an digit (0 to 9)
+ *
+ * @c: int to be tested
+ * Return: 1 if c is a digit, 0 if otherwise
  */
 int _isdigit(int c)
 {
-if (c >= '0' && c <= '9')
-{
-return (1);
-}
-else
-{
-return (0);
-}
-return (0);
+	int s = 0;
+
+	if (c >= '0' && c <= '9')
+		s = 1;
+
+	return (s);
 }
