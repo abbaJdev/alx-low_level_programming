@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "liball.a"
 
 /**
  * _strncat - two words
