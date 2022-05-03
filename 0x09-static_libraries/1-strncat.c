@@ -1,4 +1,4 @@
-#include "liball.a"
+#include "main.h"
 
 /**
  * _strncat - two words

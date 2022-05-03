@@ -1,6 +1,8 @@
 {
     "git.ignoreLimitWarning": true,
     "files.associations": {
-        "holberton.h": "c"
+        "holberton.h": "c",
+        "main.h": "c",
+        "*.a": "c"
     }
 }
