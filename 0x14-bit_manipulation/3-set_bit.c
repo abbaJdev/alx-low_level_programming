@@ -1,16 +1,15 @@
 #include "holberton.h"
-#include <stdlib.h>
-
 /**
- * set_bit - sets the value of a bit to 1 at a given index
- * @n: parameter
+ * set_bit - Entry Point
+ * @n: input
  * @index: index
- * Return: value
+ * Return: 0
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	if (index > sizeof(n) * 8)
+	if (index > 63)
 		return (-1);
-	*n |= (1 << index);
+
+	*n = *n | 1ul << index;
 	return (1);
 }

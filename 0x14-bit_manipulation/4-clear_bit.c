@@ -1,17 +1,16 @@
 #include "holberton.h"
-#include <stdlib.h>
-
 /**
- * clear_bit - sets the value of a bit to 0 at a given index
- * @n: parameter
+ * clear_bit - Entry Point
+ * @n: input
  * @index: index
- * Return: 1 if works, -1 if error
+ * Return: 0
  */
-
-int clear_bit(unsigned long int *n, unsigned int index)
+	int clear_bit(unsigned long int *n, unsigned int index)
 {
-	if (index > sizeof(n) * 8)
+	if (index > 63)
 		return (-1);
-	*n &= ~(1 << index);
+
+	*n = *n & ~(1ul << index);
 	return (1);
 }
+

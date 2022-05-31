@@ -1,53 +1,73 @@
-###  0x14. C - Bit manipulation
-
-# Its a 14th project of ALX-Low_level_programming in c
-
------------------------------------------
-
-Bit manipulation is the act of algorithmically manipulating bits or other pieces of data shorter than a word. Computer programming tasks that require bit manipulation include low-level device control, error detection and correction algorithms, data compression, encryption algorithms, and optimization.
-
--------------
-## The hexadecimal number system
-
-  Digit          | Binary                        |Examples |
-|----------------|-------------------------------|-----------------------------|
-| `0` | 0000 | y |
-| `1` | 0001 | y |
-| `2` | 0010 | y |
-| `3` | 0011 | y |
-| `4` | 0100 | y |
-| `5` | 0101 | y |
-| `6` | 0110 | y |
-| `7` | 0111 | y |
-| `8` | 1000 | y |
-| `9` | 1001 | y |
-| `a` | 1010 | y |
-| `b` | 1011 | y |
-| `c` | 1100 | y |
-| `e` | 1101 | y |
-| `f` | 1111 | y |
+# 0x14. C - Bit manipulation
 
 
-------------
-# Hexadecimal is assigned usign "0x" notation.
+## Learning Objectives
+At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-...... ----
-#### Bitwise operation used
- operator | meaning | comment|
- `&` | The & operator is the bitwise logical and operator, which forms the logical and of pairs of bits taken from two numbers | `(1010)&(0110) = (0010) = 0x2`
- `|` | operator forms the bitwise or `x|y` | `(1010)|(0110) = (1110) = 0xe`
- `^`| operator forms the exclusive or of bits | `(1010)^(0110) = (1100) = 0xc`
- `~`| operator is the bitwise negation operator |`0xb = 1011, ~x evaluates to 0100`
+### General
+Look for the right source of information without too much help
+How to manipulate bits and use bitwise operators
 
- # working with individual bits
+## Requirements
+### General
+* Allowed editors: vi, vim, emacs
+* All your files will be compiled on Ubuntu 14.04 LTS
+* Your programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
+* All your files should end with a new line
+* A README.md file, at the root of the folder of the project is mandatory
+* Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
+* You are not allowed to use global variables
+* No more than 5 functions per file
+* The only C standard library functions allowed are malloc, free and exit. Any use of functions like printf, puts, calloc, realloc etc… is forbidden
+* You are allowed to use _putchar
+* You don’t have to push _putchar.c, we will use our file. If you do it won’t be taken into account
+* In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation. Our main.c files might be different from the one shown in the examples
+* The prototypes of all your functions and the prototype of the function _putchar should be included in your header file called holberton.h
+* Don’t forget to push your header file
+* All your header files should be include guarded
 
-## == equal operators
-  If we have an unsigned short variable x with the value of 0xa8 = 10101000 and we want to determine whether or not the last bit is a 0, we would use the test x&0x01 == 0,
-## | or operator
-  To set bits in a number to particular values we use either | or & depending on whether we want to set that bit to be a 1 or a 0. For example, to set the fourth bit in an eight bit variable y to be a 1 we would use y = y|0x10
+## Tasks
+### 0. 0
+Write a function that converts a binary number to an unsigned int.
 
-## & and operator
-  To set the fourth bit of y to 0 we would use & with the mask 0xef = 11101111: y = y&0xef
+* Prototype: ```unsigned int binary_to_uint(const char *b);```
+* where b is pointing to a string of 0 and 1 chars
+* Return: the converted number, or 0 if
+	* there is one or more chars in the string b that is not 0 or 1
+	* b is ```NULL```
 
-## ~ negation
-Another way to do this is to use the ~ operator to help construct the mask: y = y&(~0x10)
+### 1. 1
+Write a function that prints the binary representation of a number.
+
+* Prototype: ```void print_binary(unsigned long int n);```
+* Format: see example
+* You are not allowed to use arrays
+* You are not allowed to use malloc
+* You are not allowed to use the % or / operators
+
+### 2. 10
+Write a function that returns the value of a bit at a given index.
+
+* Prototype: ```int get_bit(unsigned long int n, unsigned int index);```
+* where index is the index, starting from 0 of the bit you want to get
+* Returns: the value of the bit at index index or -1 if an error occured
+
+### 3. 11
+Write a function that sets the value of a bit to 1 at a given index.
+
+* Prototype: int set_bit(unsigned long int *n, unsigned int index);
+* where index is the index, starting from 0 of the bit you want to set
+* Returns: 1 if it worked, or -1 if an error occurred
+
+### 4. 100
+Write a function that sets the value of a bit to 0 at a given index.
+
+* Prototype: ```int clear_bit(unsigned long int *n, unsigned int index);```
+* where index is the index, starting from 0 of the bit you want to set
+* Returns: 1 if it worked, or -1 if an error occurred
+
+### 5. 101
+Write a function that returns the number of bits you would need to flip to get from one number to another.
+
+* Prototype: ```unsigned int flip_bits(unsigned long int n, unsigned long int m);```
+* You are not allowed to use the % or / operators
